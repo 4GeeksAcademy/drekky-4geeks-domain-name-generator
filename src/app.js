@@ -1,11 +1,13 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let pronouns = ['my', 'your', 'their', 'his', 'her', 'its', 'our', 'one'];
+let adjectives = ['amazing', 'colorful', 'dynamic', 'exquisite', 'majestic', 'stellar', 'vibrant', 'zesty'];
+let nouns = ['adventure', 'breeze', 'cascade', 'equinox', 'harmony', 'oasis', 'serenity', 'zenith'];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+function randomDomainNames(pronouns, adjectives, nouns) {
+    let pronoun = pronouns[Math.floor(Math.random() * pronouns.length)];
+    let adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+    let noun = nouns[Math.floor(Math.random() * nouns.length)];
+    return pronoun + adjective + noun + '.com';
+}
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+let newDomainName = randomDomainNames(pronouns, adjectives, nouns);
+console.log(newDomainName);
