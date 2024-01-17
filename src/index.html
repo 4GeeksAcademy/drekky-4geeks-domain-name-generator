@@ -2,28 +2,79 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>
+      4Geeks Domain Name Generator by Drekky
+    </title>
+    <link rel="stylesheet" href="output.css" />
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <main
+      class="min-h-screen flex flex-col justify-center items-center bg-green-600/60"
+    >
+      <div
+        class="flex flex-col items-center bg-black/30 min-w-[400px] min-h-[450px] rounded-lg drop-shadow-xl shadow-black p-4"
+      >
+        <h1 class="text-xl font-bold">
+          Drekky's Domain Name Generator!
+        </h1>
+        <p class="text-xl mb-3">
+          Try your luck at Drekky's Domain Name
+          Generator!
+        </p>
+        <div class="flex flex-col gap-2">
+          <label for="pronounInput"
+            >Enter 4 pronouns seperated by commas
+            below</label
+          >
+          <input
+            type="text"
+            id="pronounInput"
+            placeholder="E.x.: my, theirs, hers, his"
+          />
+          <label for="adjectiveInput"
+            >Enter 4 adjectives seperated by commas
+            below</label
+          >
+          <input
+            type="text"
+            id="adjectiveInput"
+            placeholder="E.x.: happy, healthy, stupid, crazy"
+          />
+          <label for="nounInput"
+            >Enter 4 nouns seperated by commas
+            below</label
+          >
+          <input
+            type="text"
+            id="nounInput"
+            placeholder="E.x.: adventure, breeze, cascade, equinox"
+          />
+          <label for="extensionInput"
+            >Enter 4 different domain extensions
+            seperated by commas below</label
+          >
+          <input
+            type="text"
+            id="extensionInput"
+            placeholder=".com, .net, .ai, .is"
+          />
+
+          <button
+            id="generateBtn"
+            onclick="generateDomainNames()"
+            class="border border-gray-900 rounded-md p-2 text-xl hover:bg-green-600/45"
+          >
+            Generate!
+          </button>
+          <div id="result" class="list-none"></div>
+        </div>
       </div>
-    </div>
+    </main>
+    <script src="./app.js" defer></script>
   </body>
 </html>

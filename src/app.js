@@ -1,13 +1,38 @@
-let pronouns = ['my', 'your', 'their', 'his', 'her', 'its', 'our', 'one'];
-let adjectives = ['amazing', 'colorful', 'dynamic', 'exquisite', 'majestic', 'stellar', 'vibrant', 'zesty'];
-let nouns = ['adventure', 'breeze', 'cascade', 'equinox', 'harmony', 'oasis', 'serenity', 'zenith'];
+function generateDomainNames() {
+  const pronouns = document
+    .getElementById("pronounInput")
+    .value.split(",")
+    .map((item) => item.trim());
+  const adjectives = document
+    .getElementById("adjectiveInput")
+    .value.split(",")
+    .map((item) => item.trim());
+  const nouns = document
+    .getElementById("nounInput")
+    .value.split(",")
+    .map((item) => item.trim());
+  const extensions = document
+    .getElementById("extensionInput")
+    .value.split(",")
+    .map((item) => item.trim());
 
-function randomDomainNames(pronouns, adjectives, nouns) {
-    let pronoun = pronouns[Math.floor(Math.random() * pronouns.length)];
-    let adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    let noun = nouns[Math.floor(Math.random() * nouns.length)];
-    return pronoun + adjective + noun + '.com';
+  const resultContainer = document.getElementById(
+    "result"
+  );
+  resultContainer.innerHTML = "";
+
+  for (const pronoun of pronouns) {
+    for (const adjective of adjectives) {
+      for (const noun of nouns) {
+        for (const extension of extensions) {
+          const domainName = `${pronoun}${adjective}${noun}${extension}`;
+          const listItem = document.createElement(
+            "li"
+          );
+          listItem.textContent = domainName;
+          resultContainer.appendChild(listItem);
+        }
+      }
+    }
+  }
 }
-
-let newDomainName = randomDomainNames(pronouns, adjectives, nouns);
-console.log(newDomainName);
